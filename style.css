@@ -1,126 +1,195 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Background */
 body{
-    background-image: url('Screenshot\ 2025-09-21\ 210052.png');
+    background-image: url('Screenshot 2025-09-21 210052.png');
     background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
 }
-    nav{
+
+/* NAVBAR */
+nav{
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
 h2{
-    margin-left: 200px;
     color: orangered;
 }
-ul,li,h2{
-    display: inline;
-}
+
 ul{
-    margin-left: 180px;
+    list-style: none;
+    display: flex;
+    gap: 30px;
 }
+
 li{
-    padding-right: 50px;
-}
-li:hover{
     cursor: pointer;
+}
+
+li:hover{
     color: red;
 }
+
+/* SEARCH BAR */
 .tow{ 
-    margin-left: 35%;
-    margin-top: 110px;
+    margin: 30px auto;
     background-color: orangered;
     color: white;
-    width: 30%;
-    height: 35px;
-    font-weight: bold;
-    font-family: sans-serif; 
+    width: 90%;
+    max-width: 400px;
+    height: 40px;
     border-radius: 6px;
-   
+    display: flex;
+    align-items: center;
+    padding: 5px;
 }
+
 .tow input{
-  
-    margin-left: 200px;
-    width: 40%;
-    padding: 9px;
+    width: 100%;
+    padding: 8px;
     border: none;
     outline: none;
     background-color: #333;
-    color: azure;
+    color: white;
+    border-radius: 4px;
 }
+
+/* MAIN SECTION */
 .main{
     display: flex;
-    
-    padding: 100px 135px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    flex-wrap: wrap;
 }
+
+/* LEFT */
 .left{
-    width: 40%;
-    margin-left:90px ;
+    flex: 1;
+    min-width: 300px;
     padding: 10px;
 }
+
 .left h1{
     color: white;
-    font-size: 45px;
-    
+    font-size: 40px;
+}
 
-}
 .left h1 span{
-    
     color: orangered;
-    font-size: 60px;
+    font-size: 55px;
 }
+
 .left p{
     color: white;
-    font-size: 17px;
-    line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.5;
 }
+
 .join{
     background-color: orangered;
-    padding: 10px;
     color: black;
-    cursor: pointer;
-    padding: 15px 50px;
+    padding: 12px 30px;
     border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: inline-block;
 }
+
+/* RIGHT (LOGIN) */
 .right{
-     width: 5%;
-    margin-left:340px ;
-    padding: 10px;
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
 }
-.right button{
-    background-color: orangered;
-    color: bisque;
-    padding:15px 60px ;
-    font-weight: bold;
-    font-size: 22px;
-   border-radius: 20px;
-}
+
 .right input{
-    width: 300%;
-   margin: 10px 0;
-   padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
     border: none;
-    border-bottom: 2px orangered;
+    border-bottom: 2px solid orangered;
     background: transparent;
     color: white;
 }
-hr{
-    line-height: 2px;
-    width: 350%; 
+
+.right button{
+    background-color: orangered;
+    color: black;
+    padding: 12px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    
     
 }
-.right button login{
-    background-color:orangered;
-    color: black;
-    padding:15px 50px ;
-    font-weight: bold;
-    font-size: 22px;
-   border-radius: 20px;
-}
+
 .right p{
     color: white;
-    width: 350%;
-    line-height: 1.4;
+    margin-top: 10px;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+
+/* MOBILE */
+@media (max-width: 600px){
+
+    nav{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .main{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left h1{
+        font-size: 28px;
+    }
+
+    .left h1 span{
+        font-size: 35px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 601px) and (max-width: 992px){
+
+    .main{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left, .right{
+        width: 100%;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 993px){
+
+    .main{
+        flex-direction: row;
+    }
 }
